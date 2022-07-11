@@ -1,0 +1,42 @@
+
+<table class="table table-striped table-hover">
+<thead style="background-color: #e3f2fd;">
+<tr>
+  <th>Username</th>
+  <th>Email</th>  
+  <th ></th>
+  <% if @current_user && (@current_user===@user || @current_user.admin?) %>
+  <th collapse="3">Actions</th>
+  <th ></th>
+  <% end %>
+  </tr>
+</thead>
+<tbody>
+<% @user.each do |art| %>
+ 
+ <tr>
+
+ <td>
+ <%= art.username %>
+ </td>
+ <td>
+ <%= art.email %>
+ </td>
+ <td>
+ <%= link_to "Show ", user_path(art), class:'nav-link btn btn-outline-info' %>
+ </td>
+ <% if @current_user && (@current_user===@user || @current_user.admin?) %>
+ <td>
+ <%= link_to "Edit ",  edit_user_path(art), class:'nav-link btn btn-outline-success' %>
+ </td>
+ <td>  
+ <%= link_to 'Delete', user_path(art), method: :delete, data: {confirm: "Are you sure?"}, class:'nav-link btn btn-outline-danger' %>
+ </td>
+ <% end %>
+ </tr>
+
+ <% end %>
+</tbody>
+</table>
+
+<%= paginate @user %>

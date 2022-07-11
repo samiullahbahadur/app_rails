@@ -1,0 +1,14 @@
+<h1>Sign in</h1>
+<%= form_with session:, url: sign_in_path do |form| %>
+   
+<div class="mb-3">
+<%= form.text_field :email, class:"form-control", placeholder:"Enter email",  autofocus:'true'%>
+</div>
+<div class="mb-3">
+<%= form.password_field :password,class:"form-control",placeholder:"Enter password",  autocomplete:'off'   %>
+
+</div>
+<div class="mb-3">
+<%= form.submit "Sign in", class:"btn btn-primary"%>
+</div>
+<% end %>

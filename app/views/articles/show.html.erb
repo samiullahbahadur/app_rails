@@ -1,0 +1,27 @@
+<h1> Showing selected article</h1>
+
+<table class="table">
+  <thead class="table-light">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Created by</th>
+    <th>Created_at by</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+   <td>
+   <%= @article.title %>
+   </td>
+   <td>
+   <%= @article.description %>
+   </td>
+   <td>    <%= @article.user.username if @article.user %></td>
+   <td>    <%= @article.user.created_at  if @article.user%></td>
+   </tr>
+
+  </tbody>
+</table>
+
+<%= link_to "Back" , articles_path, class:' btn btn-secondary' %>
