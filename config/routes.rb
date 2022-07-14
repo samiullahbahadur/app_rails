@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'categories/index'
+ 
   
   #get 'article/index'
   root 'home#index'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
  post 'sign_in', to: "sessions#create"
  delete 'logout' => 'sessions#destroy'
 
-
+resources :categories
 
  
 
