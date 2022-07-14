@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-    
+     
+    has_many  :article_categories
+    has_many  :categories , through: :article_categories
     paginates_per 5
     belongs_to  :user
     #before_save {self.email= email.downcase}
