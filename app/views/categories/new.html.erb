@@ -12,12 +12,12 @@
 <% end %>
 
     <div class="mb-3 form-group">
-    <%= f.text_field :username , class:"form-control", placeholder:"Enter username", autofocus:true %>
+    <%= f.text_field :name , class:"form-control", placeholder:"Enter category name", autofocus:true %>
     </div>
         
 
     <div class=" d-flex gap-3 mb-3">
-    <%= f.submit( @category.new_record? ? 'Sign up' : 'Update ',  class:"btn btn-primary" ) %>
-    <%= link_to "Back" , root_path, class:' btn btn-secondary' %>
+    <%= f.submit  "Create", class:"btn btn-primary"  %>
+    <%= link_to "Back" , articles_path, class:' btn btn-secondary' %>
     </div>
     <% end %>
